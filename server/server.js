@@ -5,6 +5,7 @@ import connectDB from "./configs/db.js";
 import {inngest, functions} from './ingest/index.js'
 import {serve} from 'inngest/express'
 import { clerkMiddleware } from '@clerk/express'
+import userRouter from "./routes/userRoutes.js";
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.get('/', (req, res) =>{
     res.send("Server is running");
 })
 app.use('/api/inngest', serve({ client: inngest, functions }))
+app.use('/api/user', userRouter);
 
 app.listen(PORT, ()=> console.log(`Server is running on Port ${PORT}`))
