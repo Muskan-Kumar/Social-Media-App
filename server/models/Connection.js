@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { User } from './User';
+import { User } from './User.js';
 
 const connectionSchema = new mongoose.Schema({
     from_user_id: {
