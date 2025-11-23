@@ -91,7 +91,7 @@ export const getChatMessage = async(req, res) =>{
                 {from_user_id: userId, to_user_id},
                 {from_user_id: to_user_id, to_user_id: userId},
             ]
-        }).sort(createdAt: -1);
+        }).sort({createdAt: -1});
 
         // mark message as seen
         await Message.updateMany({from_user_id: to_user_id, to_user_id: userId}, {seen: true});
