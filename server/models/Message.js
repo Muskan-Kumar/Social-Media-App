@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
-import { User } from './User';
+import { User } from './User.js';
 
 const messageSchema = new mongoose.Schema({
-    from_user_d: {
+    from_user_id: {
         type: String,
         ref: User, 
         required: true
     },
 
-    to_user_d: {
+    to_user_id: {
         type: String,
         ref: User, 
         required: true
